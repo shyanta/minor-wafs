@@ -15,8 +15,8 @@ Vrijdag - Feedback
 # Opdrachten
 [X]GitHub repository opzetten voor het vak
 [X]Voor- en nadelen jQuery onderzoeken (libraries/frameworks in het algemeen)
-[O]Voor- en nadelen single page web app onderzoeken
-[ ]Bestaande code ombouwen naar een object structuur (Minmaal Object Literal Pattern & IIFE)
+[X]Voor- en nadelen single page web app onderzoeken
+[X]Bestaande code ombouwen naar een object structuur (Minmaal Object Literal Pattern & IIFE)
 [ ]Basis structuur voor single page web app opzetten
 [ ]Code review
 

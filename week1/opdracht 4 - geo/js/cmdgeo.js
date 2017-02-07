@@ -87,7 +87,7 @@
             interval: false,
             REFRESH_RATE : 1000,
         
-        };
+        },
 
         // Test of GPS beschikbaar is (via geo.js) en vuur een event af
             int: function(){
@@ -261,8 +261,8 @@
     // DEBUGGING FUNCTIONS
     var debuggingRelatedFunctions = {
         var ifconfig ={
-        debugId: false,
-        }
+        debugId: false
+        },
         
         
         debug_message: function(){
