@@ -13,12 +13,12 @@ Woensdag - Introductie ES2015; progressie bekijken
 Vrijdag - Feedback
 
 # Opdrachten
-GitHub repository opzetten voor het vak
-Voor- en nadelen jQuery onderzoeken (libraries/frameworks in het algemeen)
-Voor- en nadelen single page web app onderzoeken
-Bestaande code ombouwen naar een object structuur (Minmaal Object Literal Pattern & IIFE)
-Basis structuur voor single page web app opzetten
-Code review
+[X]GitHub repository opzetten voor het vak
+[X]Voor- en nadelen jQuery onderzoeken (libraries/frameworks in het algemeen)
+[O]Voor- en nadelen single page web app onderzoeken
+[ ]Bestaande code ombouwen naar een object structuur (Minmaal Object Literal Pattern & IIFE)
+[ ]Basis structuur voor single page web app opzetten
+[ ]Code review
 
 # Beoordelingscriteria/AVV is gehaald als
 De code in een repository op GitHub staat
