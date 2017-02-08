@@ -1,3 +1,9 @@
+/*
+*Bronnen:
+*https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
+*
+*/
+
 //1.
 //Maak in je JavaScript bestand onderstaande objecten met methods en parameters aan:
 //app.init()
@@ -8,8 +14,9 @@
 //2.
 //Omsluit je code met een IIFE en zorg ervoor dat de code in strict mode wordt uitgevoerd
 
+"use strict";
 (function () {
-    "use strict";
+
     
     
 //4.1 
@@ -17,7 +24,7 @@
 
     
     var app = {
-        init: function () {}
+        init: function (routes) {}
     }
 
 
@@ -28,7 +35,11 @@
 //    De eventlistener verwijst naar sections.toggle(route) met de route die je hebt aangeklikt als parameter.
 //    Let op de scope!  
     var routes {
-        init: function (sections, window) {}
+        init: function (sections, window) {
+            window.onhashchange = function(){
+                sections.toggle();
+            }
+        }
     }
 
 
