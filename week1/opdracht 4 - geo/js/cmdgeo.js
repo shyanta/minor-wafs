@@ -5,6 +5,8 @@
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 */
 
+/* Commentaar Shyanta start met //**     */
+
 /***
 * cmdaan.js
 *   Bevat functies voor CMDAan stijl geolocatie welke uitgelegd
@@ -78,14 +80,14 @@
             * calculate_distance calculates the distence between the spots and makes the circle move.
             * geo_error_handler shows error message where needed.
         */ 
-
+            //** Misschien aan de bovenkant 1 grote config variabele aanmaken
             var config = {
-            GPS_AVAILABLE : 'GPS_AVAILABLE',
-            GPS_UNAVAILABLE : 'GPS_UNAVAILABLE',
-            POSITION_UPDATED : 'POSITION_UPDATED',
+            GPS_AVAILABLE : 'GPS_AVAILABLE', //**Als je met camelCase werkt, doe dit dan overal
+            GPS_UNAVAILABLE : 'GPS_UNAVAILABLE', //**Als je met camelCase werkt, doe dit dan overal
+            POSITION_UPDATED : 'POSITION_UPDATED', //**Als je met camelCase werkt, doe dit dan overal
             intervalCounter: false,
             interval: false,
-            REFRESH_RATE : 1000,
+            REFRESH_RATE : 1000, //**Als je met camelCase werkt, doe dit dan overal
         
         },
 
@@ -182,7 +184,7 @@
          *  @param canvasID:string - het id van het HTML element waar de
          *      kaart in ge-rendered moet worden, <div> of <canvas>
          */
-        generate_map: function(){
+        generate_map: function(){ //**Als je met camelCase werkt, doe dit dan overal
         // TODO: Kan ik hier asynchroon nog de google maps api aanroepen? dit scheelt calls
             debug_message("Genereer een Google Maps kaart en toon deze in #"+canvasId)
             map = new google.maps.Map(document.getElementById(canvasId), myOptions);
