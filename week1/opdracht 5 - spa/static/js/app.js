@@ -1,60 +1,73 @@
 /*
 *Bronnen:
-*https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
-*
+*1. https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
+*2. http://www.w3schools.com/jsref/prop_style_display.asp
+*3. Timo Verkroost overleg / advies
 */
 
-//1.
-//Maak in je JavaScript bestand onderstaande objecten met methods en parameters aan:
-//app.init()
-//routes.init()
-//sections.toggle(route)
-//Er zijn dus drie objecten, ieder met één methode
-
-//2.
-//Omsluit je code met een IIFE en zorg ervoor dat de code in strict mode wordt uitgevoerd
-
-"use strict";
 (function () {
+"use strict";
 
+    var location = window.location,
+        oldURL = location.href,
+        oldHash = location.hash;
     
     
-//4.1 
-//    Roep vanuit app.init() routes.init() aan.
-
-    
+    //object App, with int method.
     var app = {
-        init: function (routes) {}
-    }
-
-
+        init: function () {
+            console.log("app");
+            routes.init(); // start routes.int
+        } 
+    };
     
-    
-//4.2
-//    In routes.init() zet je een ‘hashchange’ eventlistener.
-//    De eventlistener verwijst naar sections.toggle(route) met de route die je hebt aangeklikt als parameter.
-//    Let op de scope!  
-    var routes {
-        init: function (sections, window) {
-            window.onhashchange = function(){
-                sections.toggle();
+    //Object routes, with int method.
+    var routes = {
+        init: function () {
+            console.log("routes");
+            var location = window.location;
+            var oldHash = location.hash;
+            var newHash = location.hash;
+            var defaultHash = "#startScreen"
+            if(!oldHash){ //if on index page without hash, old and new hash are defaultHash.
+                oldHash = defaultHash;
+                newHash = defaultHash;
             }
+            
+            sections.toggle(newHash, oldHash);
+            window.onhashchange = function () {
+                newHash = location.hash;
+                sections.toggle(newHash, oldHash);
+                oldHash = newHash;
+            };
         }
-    }
+    };
 
+    var sections = {
+        toggle: function (newRoute, oldRoute) {
+                console.log("Old route = "+ oldRoute);
+                console.log("New route = "+ newRoute);
+                console.log("oldroute is a " +typeof oldRoute);
+                
+                if(!oldRoute){
+                    newRoute = "#startScreen";
+                }
+            
+                if(oldRoute){
+                    oldRoute = oldRoute.replace('#','');
+                    var hideOldSection = document.getElementById(oldRoute);
+                    hideOldSection.classList.remove("active"); 
+                }
+            
+                if(newRoute){
+                    newRoute = newRoute.replace('#','');
+                    var showNewSection = document.getElementById(newRoute);
+                    showNewSection.classList.add("active");
+                }
 
-    
-    
-    
-//5.  
-//    In de toggle functie zorg je ervoor dat de gewenste sectie wordt getoond en alle andere secties (in dit geval één) worden verborgen	
-    var sections {
-        toggle: function () {}
-    }
-    
-    
-//3.   
-//Roep onderaan de code (maar wel in de IIFE) app.init() aan om de applicatie te starten
-app.init(routes, sections, window);
+        }
+    };
+
+app.init();
     
 })();
